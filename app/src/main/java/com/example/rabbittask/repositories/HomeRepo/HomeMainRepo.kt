@@ -6,7 +6,4 @@ class HomeMainRepo (var mainApi:HomeApi ) : HomeMainUseCase {
 
     override suspend fun getHomePageContent() = mainApi.getHomePageContent()
 
-    //override suspend fun getSliderImages() = mainApi.getSliderImages()
-
-    //override suspend fun pushTokenToServer(token:String, deviceId:String)  = mainApi.sendTokenToServer(token, deviceId)
 }
