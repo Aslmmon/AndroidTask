@@ -1,4 +1,4 @@
-package com.example.rabbittask.repositories.HomeRepo.adapter
+package com.example.rabbittask.features.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.rabbittask.R
-import com.example.rabbittask.model.Attraction
 import com.example.rabbittask.model.Event
-import com.example.rabbittask.model.HotSpot
 import kotlinx.android.synthetic.main.hot_spots_item.view.*
 
 class EventsAdapter(private val interaction: Interaction? = null) :

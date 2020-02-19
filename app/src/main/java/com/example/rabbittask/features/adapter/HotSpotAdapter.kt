@@ -1,4 +1,4 @@
-package com.example.rabbittask.repositories.HomeRepo.adapter
+package com.example.rabbittask.features.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
