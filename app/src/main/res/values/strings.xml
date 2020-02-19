@@ -9,4 +9,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="notification">Notification</string>
+    <string name="attractions_title">Attractions</string>
+    <string name="view_all_title">view all</string>
 </resources>

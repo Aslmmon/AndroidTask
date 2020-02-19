@@ -4,18 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+<!--    <include layout="@layout/toolbar"-->
+<!--        android:id="@+id/tool"-->
+<!--        />-->
 
-    <fragment
-        android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:defaultNavHost="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/nav_graph" />
+    <include layout="@layout/home_content"
+        />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
@@ -48,4 +42,6 @@
         app:backgroundTint="@color/purple"
         app:fabSize="normal"
         app:layout_anchor="@id/bottomAppBar" />
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

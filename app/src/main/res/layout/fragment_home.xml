@@ -1,124 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include layout="@layout/toolbar" />
-
-    <ImageView
-        android:id="@+id/iv_hotspot_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/hotspot_icon"
-        app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="@string/hotspots_title"
-        app:layout_constraintBottom_toBottomOf="@id/iv_hotspot_icon"
-        app:layout_constraintStart_toEndOf="@id/iv_hotspot_icon" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:text="view all"
-        android:textColor="@color/purple"
-        app:layout_constraintBottom_toBottomOf="@id/iv_view_all_icon"
-        app:layout_constraintEnd_toStartOf="@id/iv_view_all_icon" />
-
-    <ImageView
-        android:id="@+id/iv_view_all_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/view_all_icon"
-        app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
-        app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
-        app:layout_constraintTop_toBottomOf="@id/iv_hotspot_icon"
-        tools:itemCount="2"
-        app:layout_constraintBottom_toTopOf="@id/iv_events_icon"
-        tools:listitem="@layout/hot_spots_item" />
 
 
-    <ImageView
-        android:id="@+id/iv_events_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/events_icon"
-        app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
-        app:layout_constraintTop_toBottomOf="@id/recycler" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="@string/events"
-        app:layout_constraintBottom_toBottomOf="@id/iv_events_icon"
-        app:layout_constraintStart_toEndOf="@id/iv_events_icon" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:text="view all"
-        android:textColor="@color/purple"
-        app:layout_constraintBottom_toBottomOf="@id/iv_view_all_icon_events"
-        app:layout_constraintEnd_toStartOf="@id/iv_view_all_icon" />
-
-    <ImageView
-        android:id="@+id/iv_view_all_icon_events"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/view_all_icon"
-        app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
-        app:layout_constraintTop_toBottomOf="@id/recycler" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_events"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
-        app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
-        app:layout_constraintTop_toBottomOf="@id/iv_events_icon"
-        tools:itemCount="2"
-        tools:listitem="@layout/hot_spots_item" />
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gd_end_vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.97" />
+        <ImageView
+            android:id="@+id/iv_hotspot_icon"
+            style="@style/image_icon_style"
+            android:src="@drawable/hotspot_icon"
+            app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gd_start_vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.03" />
+        <TextView
+            style="@style/text_title_style"
+            android:text="@string/hotspots_title"
+            app:layout_constraintBottom_toBottomOf="@id/iv_hotspot_icon"
+            app:layout_constraintStart_toEndOf="@id/iv_hotspot_icon" />
+
+        <TextView
+            style="@style/view_all_text_style"
+            android:text="view all"
+            app:layout_constraintBottom_toBottomOf="@id/iv_view_all_icon"
+            app:layout_constraintEnd_toStartOf="@id/iv_view_all_icon" />
+
+        <ImageView
+            android:id="@+id/iv_view_all_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/view_all_icon"
+            app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            style="@style/recylcer_view_style"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/iv_events_icon"
+            app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
+            app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
+            app:layout_constraintTop_toBottomOf="@id/iv_hotspot_icon"
+            tools:itemCount="2"
+            tools:listitem="@layout/hot_spots_item" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/iv_events_icon"
+            style="@style/image_icon_style"
+            android:src="@drawable/events_icon"
+            app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
+            app:layout_constraintTop_toBottomOf="@id/recycler" />
+
+        <TextView
+            style="@style/text_title_style"
+            android:text="@string/events"
+            app:layout_constraintBottom_toBottomOf="@id/iv_events_icon"
+            app:layout_constraintStart_toEndOf="@id/iv_events_icon" />
+
+        <TextView
+            style="@style/view_all_text_style"
+            android:text="@string/view_all_title"
+            android:textColor="@color/purple"
+            app:layout_constraintBottom_toBottomOf="@id/iv_view_all_icon_events"
+            app:layout_constraintEnd_toStartOf="@id/iv_view_all_icon" />
+
+        <ImageView
+            android:id="@+id/iv_view_all_icon_events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/view_all_icon"
+            app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
+            app:layout_constraintTop_toBottomOf="@id/recycler" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_events"
+            style="@style/recylcer_view_style"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
+            app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
+            app:layout_constraintTop_toBottomOf="@id/iv_events_icon"
+            tools:itemCount="2"
+            tools:listitem="@layout/hot_spots_item" />
+
+
+        <ImageView
+            android:id="@+id/iv_attractions_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/attarctions_icon"
+            app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
+            app:layout_constraintTop_toBottomOf="@id/recycler_events" />
+
+        <TextView
+            style="@style/text_title_style"
+            android:text="@string/attractions_title"
+            app:layout_constraintBottom_toBottomOf="@id/iv_attractions_icon"
+            app:layout_constraintStart_toEndOf="@id/iv_attractions_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="view all"
+            android:textColor="@color/purple"
+            app:layout_constraintBottom_toBottomOf="@id/iv_view_all_icon_attractions"
+            app:layout_constraintEnd_toStartOf="@id/iv_view_all_icon_attractions" />
+
+        <ImageView
+            android:id="@+id/iv_view_all_icon_attractions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/view_all_icon"
+            app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
+            app:layout_constraintTop_toBottomOf="@id/recycler_events" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_attractions"
+            style="@style/recylcer_view_style"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
+            app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
+            app:layout_constraintTop_toBottomOf="@id/iv_attractions_icon"
+            tools:itemCount="2"
+            tools:listitem="@layout/hot_spots_item" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gd_end_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gd_start_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

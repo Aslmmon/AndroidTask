@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/iv_hotspot_icon"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:src="@drawable/googleg_standard_color_18"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,7 +22,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Suunasndnad"
-        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/iv_hotspot_icon"
         app:layout_constraintTop_toBottomOf="@id/iv_hotspot_icon"
@@ -33,7 +32,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Restauarant"
-        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@id/tv_title"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
         />
