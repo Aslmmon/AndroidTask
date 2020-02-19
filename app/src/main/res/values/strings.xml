@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RabbitTask</string>
+    <string name="hotspots_title">Hotspots</string>
+    <string name="events">Events</string>
+</resources>
