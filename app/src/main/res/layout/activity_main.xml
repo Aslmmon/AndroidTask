@@ -5,9 +5,48 @@
     android:layout_height="match_parent">
 
 
+    <include layout="@layout/home_content" />
 
-    <include layout="@layout/home_content"
-        />
+
+<!--    <com.sa90.materialarcmenu.ArcMenu-->
+<!--        android:id="@+id/arcmenu_android_example_layout"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        app:menu_color="#0fb33d"-->
+<!--        app:menu_open="arc_right"-->
+<!--        app:menu_scr="@drawable/filter_inside_search">-->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/fab_arc_menu_1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@android:drawable/ic_dialog_info"-->
+<!--            app:backgroundTint="#0fb33d" />-->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/fab_arc_menu_2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@android:drawable/ic_dialog_alert"-->
+<!--            app:backgroundTint="#0fb33d" />-->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/fab_arc_menu_3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@android:drawable/ic_dialog_email"-->
+<!--            app:backgroundTint="#0fb33d" />-->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/fab_arc_menu_4"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:src="@android:drawable/ic_dialog_map"-->
+<!--            app:backgroundTint="#0fb33d" />-->
+
+<!--    </com.sa90.materialarcmenu.ArcMenu>-->
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"

@@ -9,6 +9,7 @@ import com.example.rabbittask.features.adapter.EventsAdapter
 import com.example.rabbittask.features.adapter.HotSpotAdapter
 import com.example.rabbittask.model.Event
 import com.example.rabbittask.model.HotSpot
+import com.sa90.materialarcmenu.StateChangeListener
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
