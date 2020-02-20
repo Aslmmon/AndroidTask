@@ -3,6 +3,7 @@ package com.example.rabbittask.features
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.rabbittask.model.HomePageContent
 import com.example.rabbittask.model.HomePageContentResponse
 import com.homyapplication.common.bases.launchDataLoad
 import com.homyapplication.common.repositories.home_repo.HomeMainUseCase
@@ -16,8 +17,8 @@ class MainActivityViewModel(val homeMainUseCase: HomeMainUseCase) : ViewModel() 
     val ErrorMessage: LiveData<String>
         get() = _ErrorMessage
 
-    private val _homePageResponse = MutableLiveData<HomePageContentResponse>()
-    val homePageResponse: LiveData<HomePageContentResponse>
+    private val _homePageResponse = MutableLiveData<HomePageContent>()
+    val homePageResponse: LiveData<HomePageContent>
         get() = _homePageResponse
 
 

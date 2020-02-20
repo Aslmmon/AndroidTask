@@ -11,6 +11,7 @@ import com.example.rabbittask.model.Event
 import com.example.rabbittask.model.HotSpot
 import com.sa90.materialarcmenu.StateChangeListener
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.bottom_navigation.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {

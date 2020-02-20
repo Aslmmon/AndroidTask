@@ -62,12 +62,15 @@ class EventsAdapter(private val interaction: Interaction? = null) :
 
         fun bind(item: Event) = with(itemView) {
             itemView.setOnClickListener {
-                interaction?.onItemSelected(adapterPosition, item)
+                interaction?.onItemSelected(adapterPosition, item!!)
             }
             itemView.tv_title.text = item.name
-            Glide.with(itemView.context).load(R.drawable.bellman_bottom_icon)
-                .placeholder(R.drawable.bellman_bottom_icon).into(itemView.iv_hotspot_icon)
-            //    tv_subtitle.tv_subtitle.text = item.categories[0].name
+//            Glide.with(itemView.context).load(R.drawable.bellman_bottom_icon)
+//                .placeholder(R.drawable.bellman_bottom_icon).into(itemView.iv_hotspot_icon)
+//               // tv_subtitle.tv_subtitle.text = item?.categories?.get(0)?.name.toString()
+            if(item.photos.isNotEmpty()) Glide.with(itemView.context).load(item.photos[0]).placeholder(R.drawable.ic_empty).into(itemView.iv_hotspot_icon)
+            if(item.categories.isNotEmpty()) tv_subtitle.text = item.categories[0].name
+            else tv_subtitle.text = "subtitle"
 
         }
     }

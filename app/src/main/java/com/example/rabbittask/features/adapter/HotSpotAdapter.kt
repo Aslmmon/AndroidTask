@@ -67,9 +67,9 @@ class HotSpotAdapter(private val interaction: Interaction? = null) :
                 interaction?.onItemSelected(adapterPosition, item)
             }
             itemView.tv_title.text = item.name
-            Glide.with(itemView.context).load(item.profile_photo).into(itemView.iv_hotspot_icon)
-        //    tv_subtitle.tv_subtitle.text = item.categories[0].name
-
+            if(item.photos.isNotEmpty()) Glide.with(itemView.context).load(item.photos[0]).placeholder(R.drawable.ic_empty).into(itemView.iv_hotspot_icon)
+            if(item.categories.isNotEmpty()) tv_subtitle.text = item.categories[0].name
+            else tv_subtitle.text = "subtitle"
         }
     }
 

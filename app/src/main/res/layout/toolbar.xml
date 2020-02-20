@@ -5,10 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toolbar"
-    android:layout_width="match_parent"
-    android:layout_height="140dp"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
     android:background="@drawable/big_header"
-    app:layout_scrollFlags="scroll|enterAlways"
     tools:showIn="@layout/activity_main">
 
     <androidx.constraintlayout.widget.ConstraintLayout

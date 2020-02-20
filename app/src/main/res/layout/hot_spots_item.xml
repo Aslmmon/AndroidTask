@@ -9,9 +9,10 @@
 
     <ImageView
         android:id="@+id/iv_hotspot_icon"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/googleg_standard_color_18"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_empty"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="20dp"
@@ -23,6 +24,7 @@
         android:layout_height="wrap_content"
         tools:text="Suunasndnad"
         android:textStyle="bold"
+        android:textColor="@color/purple"
         app:layout_constraintStart_toStartOf="@id/iv_hotspot_icon"
         app:layout_constraintTop_toBottomOf="@id/iv_hotspot_icon"
         />
@@ -34,6 +36,8 @@
         tools:text="Restauarant"
         app:layout_constraintStart_toStartOf="@id/tv_title"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

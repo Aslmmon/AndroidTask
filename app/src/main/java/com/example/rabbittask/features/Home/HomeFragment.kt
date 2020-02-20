@@ -17,6 +17,7 @@ import com.example.rabbittask.features.adapter.EventsAdapter
 import com.example.rabbittask.features.adapter.HotSpotAdapter
 import com.example.rabbittask.model.Attraction
 import com.example.rabbittask.model.Event
+import com.example.rabbittask.model.HomePageContent
 import com.example.rabbittask.model.HotSpot
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -39,12 +40,9 @@ class HomeFragment : Fragment(R.layout.fragment_home),HotSpotAdapter.Interaction
 
         mainViewModel.getHomePageContent()
         mainViewModel.homePageResponse.observe(viewLifecycleOwner, Observer {
-            Log.i(javaClass.simpleName, it.toString())
-            Log.i(javaClass.simpleName, it.data.hot_spots.size.toString())
-
-            hotSpotAdapter.submitList(it.data.hot_spots)
-            eventsAdapter.submitList(it.data.events)
-            attractionAdapter.submitList(it.data.attractions)
+            hotSpotAdapter.submitList(it.hotSpotsList)
+            eventsAdapter.submitList(it.eventsList)
+            attractionAdapter.submitList(it.attractionList)
         })
         mainViewModel.ErrorMessage.observe(viewLifecycleOwner, Observer {
             Log.i(javaClass.simpleName, it.toString())
