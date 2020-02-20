@@ -11,6 +11,7 @@ import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton
 import kotlinx.android.synthetic.main.bottom_navigation.*
+import kotlinx.android.synthetic.main.loading.*
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 

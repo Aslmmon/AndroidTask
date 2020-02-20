@@ -3,13 +3,10 @@ package com.example.rabbittask.features.Home
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.example.rabbittask.R
 import com.example.rabbittask.features.MainActivityViewModel
 import com.example.rabbittask.features.adapter.AttractionsAdapter
@@ -17,9 +14,9 @@ import com.example.rabbittask.features.adapter.EventsAdapter
 import com.example.rabbittask.features.adapter.HotSpotAdapter
 import com.example.rabbittask.model.Attraction
 import com.example.rabbittask.model.Event
-import com.example.rabbittask.model.HomePageContent
 import com.example.rabbittask.model.HotSpot
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.loading.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
@@ -35,6 +32,8 @@ class HomeFragment : Fragment(R.layout.fragment_home),HotSpotAdapter.Interaction
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecycler()
+        loading.start()
+
 
 
 
@@ -43,9 +42,11 @@ class HomeFragment : Fragment(R.layout.fragment_home),HotSpotAdapter.Interaction
             hotSpotAdapter.submitList(it.hotSpotsList)
             eventsAdapter.submitList(it.eventsList)
             attractionAdapter.submitList(it.attractionList)
+            loading.stop()
         })
         mainViewModel.ErrorMessage.observe(viewLifecycleOwner, Observer {
             Log.i(javaClass.simpleName, it.toString())
+            loading.stop()
 
         })
     }
