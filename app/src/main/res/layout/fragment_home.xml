@@ -2,141 +2,82 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:scrollbars="vertical"
     android:overScrollMode="never"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-        <ImageView
-            android:id="@+id/iv_hotspot_icon"
-            style="@style/image_icon_style"
-            android:src="@drawable/hotspot_icon"
+        <com.example.rabbittask.common.custom.CustomView
             app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-        <TextView
-            style="@style/text_title_style"
-            android:text="@string/hotspots_title"
-            app:layout_constraintBottom_toBottomOf="@id/iv_hotspot_icon"
-            app:layout_constraintStart_toEndOf="@id/iv_hotspot_icon" />
-
-        <TextView
-            style="@style/view_all_text_style"
-            android:text="view all"
-            app:layout_constraintBottom_toBottomOf="@id/iv_view_all_icon"
-            app:layout_constraintEnd_toStartOf="@id/iv_view_all_icon" />
-
-        <ImageView
-            android:id="@+id/iv_view_all_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/view_all_icon"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            app:text="@string/hot_spot_text_title"
+            android:id="@+id/cv_hotSpots"
+            app:image="@drawable/hotspot_icon"
+            style="@style/custom_view_style" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             style="@style/recylcer_view_style"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@id/iv_events_icon"
             app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
             app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
-            app:layout_constraintTop_toBottomOf="@id/iv_hotspot_icon"
+            app:layout_constraintTop_toBottomOf="@id/cv_hotSpots"
             tools:itemCount="2"
             tools:listitem="@layout/hot_spots_item" />
 
 
-        <ImageView
-            android:id="@+id/iv_events_icon"
-            style="@style/image_icon_style"
-            android:src="@drawable/events_icon"
-            app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
-            app:layout_constraintTop_toBottomOf="@id/recycler" />
 
-        <TextView
-            style="@style/text_title_style"
-            android:text="@string/events"
-            app:layout_constraintBottom_toBottomOf="@id/iv_events_icon"
-            app:layout_constraintStart_toEndOf="@id/iv_events_icon" />
-
-        <TextView
-            style="@style/view_all_text_style"
-            android:text="@string/view_all_title"
-            android:textColor="@color/purple"
-            app:layout_constraintBottom_toBottomOf="@id/iv_view_all_icon_events"
-            app:layout_constraintEnd_toStartOf="@id/iv_view_all_icon" />
-
-        <ImageView
-            android:id="@+id/iv_view_all_icon_events"
-            android:layout_width="wrap_content"
+        <com.example.rabbittask.common.custom.CustomView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/view_all_icon"
+            app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
+            app:layout_constraintTop_toBottomOf="@id/recycler"
             app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
-            app:layout_constraintTop_toBottomOf="@id/recycler" />
+            app:text="@string/events_text_title"
+            android:id="@+id/cv_events"
+            app:image="@drawable/events_icon"
+            />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_events"
             style="@style/recylcer_view_style"
-            android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
             app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
-            app:layout_constraintTop_toBottomOf="@id/iv_events_icon"
+            app:layout_constraintTop_toBottomOf="@id/cv_events"
             tools:itemCount="2"
             tools:listitem="@layout/hot_spots_item" />
 
 
-        <ImageView
-            android:id="@+id/iv_attractions_icon"
-           style="@style/image_icon_style"
-            android:src="@drawable/attarctions_icon"
+
+
+        <com.example.rabbittask.common.custom.CustomView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
-            app:layout_constraintTop_toBottomOf="@id/recycler_events" />
-
-        <TextView
-            style="@style/text_title_style"
-            android:text="@string/attractions_title"
-            app:layout_constraintBottom_toBottomOf="@id/iv_attractions_icon"
-            app:layout_constraintStart_toEndOf="@id/iv_attractions_icon" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:text="view all"
-            android:textColor="@color/purple"
-            app:layout_constraintBottom_toBottomOf="@id/iv_view_all_icon_attractions"
-            app:layout_constraintEnd_toStartOf="@id/iv_view_all_icon_attractions" />
-
-        <ImageView
-            android:id="@+id/iv_view_all_icon_attractions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/view_all_icon"
+            app:layout_constraintTop_toBottomOf="@id/recycler_events"
             app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
-            app:layout_constraintTop_toBottomOf="@id/recycler_events" />
-
+            app:text="@string/attractions_text_title"
+            android:id="@+id/cv_attractions"
+            app:image="@drawable/attarctions_icon"
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_attractions"
             style="@style/recylcer_view_style"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="@id/gd_end_vertical"
             app:layout_constraintStart_toStartOf="@id/gd_start_vertical"
-            app:layout_constraintTop_toBottomOf="@id/iv_attractions_icon"
+            app:layout_constraintTop_toBottomOf="@id/cv_attractions"
             tools:itemCount="2"
             android:layout_marginBottom="50dp"
             tools:listitem="@layout/hot_spots_item" />

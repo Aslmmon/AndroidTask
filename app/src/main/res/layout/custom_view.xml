@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/iv_hotspot_icon"
+        style="@style/image_icon_style"
+        android:src="@drawable/hotspot_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        style="@style/text_title_style"
+        android:id="@+id/tv_title"
+        android:text="@string/hotspots_title"
+        app:layout_constraintBottom_toBottomOf="@id/iv_hotspot_icon"
+        app:layout_constraintStart_toEndOf="@id/iv_hotspot_icon" />
+
+    <TextView
+        style="@style/view_all_text_style"
+        android:text="view all"
+        android:id="@+id/tv_view_all"
+        app:layout_constraintBottom_toBottomOf="@id/iv_view_all_icon"
+        app:layout_constraintEnd_toStartOf="@id/iv_view_all_icon" />
+
+    <ImageView
+        android:id="@+id/iv_view_all_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/view_all_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

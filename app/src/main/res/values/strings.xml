@@ -13,4 +13,7 @@
     <string name="view_all_title">view all</string>
     <string name="location_text">You are in \n <strong> Misr AL Gadida - Egypt</strong></string>
     <string name="search_text">Search</string>
+    <string name="hot_spot_text_title">HotSpots</string>
+    <string name="events_text_title">Events</string>
+    <string name="attractions_text_title">Attractions</string>
 </resources>

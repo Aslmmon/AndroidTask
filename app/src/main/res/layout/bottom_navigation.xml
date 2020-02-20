@@ -32,12 +32,12 @@
     </FrameLayout>
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/setWallpaper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:backgroundTint="@color/purple"
-        app:fabSize="normal"
-        app:layout_anchor="@id/bottomAppBar" />
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/setWallpaper"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:backgroundTint="@color/purple"-->
+<!--        app:fabSize="normal"-->
+<!--        app:layout_anchor="@id/bottomAppBar" />-->
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </merge>
