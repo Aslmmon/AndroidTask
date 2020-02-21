@@ -4,6 +4,7 @@ package com.example.rabbittask.features.Home
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -34,9 +35,6 @@ class HomeFragment : Fragment(R.layout.fragment_home),HotSpotAdapter.Interaction
         initRecycler()
         loading.start()
 
-
-
-
         mainViewModel.getHomePageContent()
         mainViewModel.homePageResponse.observe(viewLifecycleOwner, Observer {
             hotSpotAdapter.submitList(it.hotSpotsList)
@@ -60,6 +58,8 @@ class HomeFragment : Fragment(R.layout.fragment_home),HotSpotAdapter.Interaction
                     this
                 )
             it.adapter = hotSpotAdapter
+            it.layoutAnimation = AnimationUtils.loadLayoutAnimation(requireActivity(), R.anim.layout_from_right)
+
         }
         recycler_events.let {
             it.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
@@ -68,6 +68,8 @@ class HomeFragment : Fragment(R.layout.fragment_home),HotSpotAdapter.Interaction
                     this
                 )
             it.adapter = eventsAdapter
+            it.layoutAnimation = AnimationUtils.loadLayoutAnimation(requireActivity(), R.anim.layout_fall_down_animation)
+
         }
 
         recycler_attractions.let {

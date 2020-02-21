@@ -12,9 +12,6 @@
     <include layout="@layout/bottom_navigation" />
 
 
-    <include layout="@layout/loading"
-        android:id="@+id/loading_t"
-        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

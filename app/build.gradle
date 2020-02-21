@@ -36,6 +36,10 @@ android {
         }
 
     }
+//    compileOptions {
+//        targetCompatibility = 1.8
+//        sourceCompatibility = 1.8
+//    }
 }
 
 dependencies {
@@ -55,10 +59,7 @@ dependencies {
     implementation networkDependencies.values()
     implementation koin.values()
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
-
     implementation 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
-
-
     implementation('com.github.ihsanbal:LoggingInterceptor:2.0.7') {
         exclude group: 'org.json', module: 'json'
     }
