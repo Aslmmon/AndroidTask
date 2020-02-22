@@ -4,16 +4,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/app_bar_home"
+        android:id="@+id/home"
         android:icon="@drawable/home_selector"
-        app:showAsAction="ifRoom"
         android:title="@string/home"/>
 
     <item
-        android:id="@+id/app_bar_search"
+        android:id="@+id/search"
         android:title="@string/search_icon_title"
         android:icon="@drawable/search_selector"
-        app:showAsAction="ifRoom"/>
+        />
 
 
     <item
@@ -24,14 +23,14 @@
 
     <item
         android:title="@string/notification"
-        android:id="@+id/app_bar_notification"
+        android:id="@+id/notification"
         android:icon="@drawable/notification_selector"
-        app:showAsAction="always"/>
+        />
     <item
         android:title="@string/profile_icon_title"
-        android:id="@+id/app_bar_profile"
+        android:id="@+id/profile"
         android:icon="@drawable/profile_selector"
-        app:showAsAction="always"/>
+        />
 
 
 </menu>

@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.rabbittask.R
 import com.example.rabbittask.common.Utils
@@ -62,8 +64,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             .attachTo(fab)
             .build()
 
-        val navController = findNavController(R.id.nav_host_fragment)
-        bottom_navigation.setupWithNavController(navController)
+
+//        val navController = findNavController(R.id.nav_host_fragment)
+//        bottom_navigation.setupWithNavController(navController)
 
     }
 
@@ -89,9 +92,15 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             intent = intent
         )
 
+//        controller.observe(this, Observer { navController ->
+//            setupActionBarWithNavController(navController)
+//        })
         currentNavController = controller
 
+    }
 
+    override fun onSupportNavigateUp(): Boolean {
+        return currentNavController?.value?.navigateUp() ?: false
     }
 
 }
