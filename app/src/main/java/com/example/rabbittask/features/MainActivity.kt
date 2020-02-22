@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.loading.*
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
 
-    private var currentNavController: LiveData<NavController>? = null
+    private var currentNavController: LiveData<NavController>?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
