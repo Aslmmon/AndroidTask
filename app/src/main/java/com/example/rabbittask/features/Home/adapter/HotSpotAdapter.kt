@@ -1,11 +1,11 @@
 package com.example.rabbittask.features.Home.adapter
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.rabbittask.R
 import com.example.rabbittask.model.Attraction
@@ -52,7 +52,7 @@ class HotSpotAdapter(private val interaction: Interaction? = null) :
         return differ.currentList.size
     }
 
-    fun submitList(list: List<HotSpot>) {
+    fun submitList(list: ArrayList<HotSpot>) {
         differ.submitList(list)
     }
 

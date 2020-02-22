@@ -12,9 +12,7 @@ import com.example.rabbittask.R
 import com.example.rabbittask.features.Home.adapter.AttractionsAdapter
 import com.example.rabbittask.features.Home.adapter.EventsAdapter
 import com.example.rabbittask.features.Home.adapter.HotSpotAdapter
-import com.example.rabbittask.model.Attraction
-import com.example.rabbittask.model.Event
-import com.example.rabbittask.model.HotSpot
+import com.example.rabbittask.model.*
 import com.homyapplication.common.Connection
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.loading.*
@@ -40,7 +38,8 @@ class HomeFragment : Fragment(R.layout.fragment_home),
         if (Connection.isNetworkAvailable(requireActivity())) mainViewModel.getHomePageContent()
 
         mainViewModel.homePageResponse.observe(viewLifecycleOwner, Observer {
-            hotSpotAdapter.submitList(it.hotSpotsList)
+
+            hotSpotAdapter.submitList(it.hotSpotsList as ArrayList<HotSpot>)
             eventsAdapter.submitList(it.eventsList)
             attractionAdapter.submitList(it.attractionList)
             loading.stop()
