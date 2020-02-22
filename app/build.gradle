@@ -66,6 +66,8 @@ dependencies {
     implementation rxJavaDependencies.values()
     implementation networkDependencies.values()
     implementation koin.values()
+    testImplementation test.values()
+
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
     implementation 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
     implementation('com.github.ihsanbal:LoggingInterceptor:2.0.7') {
