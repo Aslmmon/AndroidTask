@@ -15,6 +15,7 @@ import com.example.rabbittask.features.Home.adapter.HotSpotAdapter
 import com.example.rabbittask.model.Attraction
 import com.example.rabbittask.model.Event
 import com.example.rabbittask.model.HotSpot
+import com.homyapplication.common.Connection
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.loading.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -22,8 +23,8 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment(R.layout.fragment_home),
     HotSpotAdapter.Interaction,
-    EventsAdapter.Interaction ,
-    AttractionsAdapter.Interaction{
+    EventsAdapter.Interaction,
+    AttractionsAdapter.Interaction {
 
     private val mainViewModel: HomeViewModel by viewModel()
     lateinit var hotSpotAdapter: HotSpotAdapter
@@ -36,7 +37,8 @@ class HomeFragment : Fragment(R.layout.fragment_home),
         initRecycler()
         loading.start()
 
-        mainViewModel.getHomePageContent()
+        if (Connection.isNetworkAvailable(requireActivity())) mainViewModel.getHomePageContent()
+
         mainViewModel.homePageResponse.observe(viewLifecycleOwner, Observer {
             hotSpotAdapter.submitList(it.hotSpotsList)
             eventsAdapter.submitList(it.eventsList)
@@ -54,29 +56,36 @@ class HomeFragment : Fragment(R.layout.fragment_home),
 
     private fun initRecycler() {
         recycler.let {
-            it.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+            it.layoutManager =
+                LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
             hotSpotAdapter =
                 HotSpotAdapter(
                     this
                 )
             it.adapter = hotSpotAdapter
-            it.layoutAnimation = AnimationUtils.loadLayoutAnimation(requireActivity(), R.anim.layout_from_right)
+            it.layoutAnimation =
+                AnimationUtils.loadLayoutAnimation(requireActivity(), R.anim.layout_from_right)
 
         }
         recycler_events.let {
-            it.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+            it.layoutManager =
+                LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
             eventsAdapter =
                 EventsAdapter(
                     this
                 )
             it.adapter = eventsAdapter
-            it.layoutAnimation = AnimationUtils.loadLayoutAnimation(requireActivity(), R.anim.layout_fall_down_animation)
+            it.layoutAnimation = AnimationUtils.loadLayoutAnimation(
+                requireActivity(),
+                R.anim.layout_fall_down_animation
+            )
 
         }
 
         recycler_attractions.let {
-            it.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-            attractionAdapter=
+            it.layoutManager =
+                LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+            attractionAdapter =
                 AttractionsAdapter(
                     this
                 )
