@@ -14,6 +14,9 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        /**
+         * Delay in Splash to Navigate to Home Activity after ..
+         */
         GlobalScope.launch {
             delay(3000)
             Navigation.goToHomeActivity(this@SplashActivity)

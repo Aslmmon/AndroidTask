@@ -28,6 +28,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) {
+            /**
+             *  function to handle Back Stacks of Bottom Navigation tabs
+             */
             setupBottomNavigationBar()
         }
         bottom_navigation.itemIconTintList = null
@@ -35,6 +38,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         val fab = FloatingActionButton.Builder(this)
             .setBackgroundDrawable(R.drawable.bellman_bottom_icon).setPosition(5).build()
 
+
+        /**
+         * Building the Fab Center Button to pop up smaller Fabs ..
+         */
 
         val icon1 = ImageView(this)
         icon1.setImageDrawable(resources.getDrawable(R.drawable.hotspot_icon))
@@ -65,8 +72,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             .build()
 
 
-//        val navController = findNavController(R.id.nav_host_fragment)
-//        bottom_navigation.setupWithNavController(navController)
 
     }
 
@@ -92,9 +97,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             intent = intent
         )
 
-//        controller.observe(this, Observer { navController ->
-//            setupActionBarWithNavController(navController)
-//        })
         currentNavController = controller
 
     }

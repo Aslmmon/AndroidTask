@@ -35,16 +35,26 @@ class HomeFragment : Fragment(R.layout.fragment_home),
         initRecycler()
         loading.start()
 
+        /**
+         * Check for Network Connection , before Executing Request for HomePageContent
+         */
+
         if (Connection.isNetworkAvailable(requireActivity())) mainViewModel.getHomePageContent()
 
         mainViewModel.homePageResponse.observe(viewLifecycleOwner, Observer {
 
+            /**
+             * Observe data for Success Response
+             */
             hotSpotAdapter.submitList(it.hotSpotsList as ArrayList<HotSpot>)
             eventsAdapter.submitList(it.eventsList)
             attractionAdapter.submitList(it.attractionList)
             loading.stop()
         })
         mainViewModel.ErrorMessage.observe(viewLifecycleOwner, Observer {
+            /**
+             * Observe data for Failed Response
+             */
             Log.i(javaClass.simpleName, it.toString())
             loading.stop()
 
@@ -54,6 +64,10 @@ class HomeFragment : Fragment(R.layout.fragment_home),
 
 
     private fun initRecycler() {
+        /**
+         * Initialization of RecyclerView for the 3 Lists of Hotspot,
+         * Attractions ,Events
+         */
         recycler.let {
             it.layoutManager =
                 LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
