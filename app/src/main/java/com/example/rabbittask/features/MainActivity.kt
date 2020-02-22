@@ -79,7 +79,12 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         val bottomNavigationView =
             findViewById<BottomNavigationView>(R.id.bottom_navigation) //BottomNavigationView의 id val navGraphIds = listOf(R.navigation.notices, R.navigation.setting)//graph들의 id // Setup the bottom navigation view with a list of navigation graphs val controller = bottomNavigationView.setupWithNavController( navGraphIds = navGraphIds, fragmentManager = supportFragmentManager, containerId = R.id.nav_host_container, //FragmentContainerView의 id intent = intent )
-        val navgraphs = listOf(R.navigation.nav_graph)
+        val navgraphs = listOf(
+            R.navigation.nav_graph,
+            R.navigation.notification_nav_graph,
+            R.navigation.profile_nav_graph,
+            R.navigation.search_nav_graph
+        )
         val controller = bottomNavigationView.setupWithNavController(
             navGraphIds = navgraphs,
             fragmentManager = supportFragmentManager,
