@@ -30,8 +30,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         }
         bottom_navigation.itemIconTintList = null
 
-        val icon = ImageView(this)
-        icon.setImageDrawable(resources.getDrawable(R.drawable.bellman_bottom_icon))
         val fab = FloatingActionButton.Builder(this)
             .setBackgroundDrawable(R.drawable.bellman_bottom_icon).setPosition(5).build()
 
