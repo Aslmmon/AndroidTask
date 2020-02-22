@@ -9,18 +9,10 @@ import android.view.ViewGroup
 
 import com.example.rabbittask.R
 
-/**
- * A simple [Fragment] subclass.
- */
-class NotificationFragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notification, container, false)
+class NotificationFragment : Fragment(R.layout.fragment_notification) {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
-
-
 }

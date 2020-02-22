@@ -9,10 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rabbittask.R
-import com.example.rabbittask.features.MainActivityViewModel
-import com.example.rabbittask.features.adapter.AttractionsAdapter
-import com.example.rabbittask.features.adapter.EventsAdapter
-import com.example.rabbittask.features.adapter.HotSpotAdapter
+import com.example.rabbittask.features.Home.adapter.AttractionsAdapter
+import com.example.rabbittask.features.Home.adapter.EventsAdapter
+import com.example.rabbittask.features.Home.adapter.HotSpotAdapter
 import com.example.rabbittask.model.Attraction
 import com.example.rabbittask.model.Event
 import com.example.rabbittask.model.HotSpot
@@ -21,10 +20,12 @@ import kotlinx.android.synthetic.main.loading.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
-class HomeFragment : Fragment(R.layout.fragment_home),HotSpotAdapter.Interaction,
-    EventsAdapter.Interaction ,AttractionsAdapter.Interaction{
+class HomeFragment : Fragment(R.layout.fragment_home),
+    HotSpotAdapter.Interaction,
+    EventsAdapter.Interaction ,
+    AttractionsAdapter.Interaction{
 
-    private val mainViewModel: MainActivityViewModel by viewModel()
+    private val mainViewModel: HomeViewModel by viewModel()
     lateinit var hotSpotAdapter: HotSpotAdapter
     lateinit var eventsAdapter: EventsAdapter
     lateinit var attractionAdapter: AttractionsAdapter
@@ -45,6 +46,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),HotSpotAdapter.Interaction
         mainViewModel.ErrorMessage.observe(viewLifecycleOwner, Observer {
             Log.i(javaClass.simpleName, it.toString())
             loading.stop()
+
 
         })
     }

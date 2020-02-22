@@ -1,4 +1,4 @@
-package com.example.rabbittask.features
+package com.example.rabbittask.features.Home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.zip
 
-class MainActivityViewModel(val homeMainUseCase: HomeMainUseCase) : ViewModel() {
+class HomeViewModel(val homeMainUseCase: HomeMainUseCase) : ViewModel() {
 
     private val _ErrorMessage = MutableLiveData<String>()
     val ErrorMessage: LiveData<String>

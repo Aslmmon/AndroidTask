@@ -1,4 +1,4 @@
-package com.example.rabbittask.features.adapter
+package com.example.rabbittask.features.Home.adapter
 
 import android.view.LayoutInflater
 import android.view.View

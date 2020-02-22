@@ -15,4 +15,7 @@
     <string name="hot_spot_text_title">HotSpots</string>
     <string name="events_text_title">Events</string>
     <string name="attractions_text_title">Attractions</string>
+    <string name="search_fragment_title">Search Fragment</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="notification_fragment">Notification Fragment</string>
 </resources>

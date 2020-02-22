@@ -1,7 +1,7 @@
 package com.example.splasho.di
 
 
-import com.example.rabbittask.features.MainActivityViewModel
+import com.example.rabbittask.features.Home.HomeViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -10,6 +10,6 @@ import org.koin.dsl.module
  */
 
 val viewModelModule = module {
-    viewModel { MainActivityViewModel(get()) }
+    viewModel { HomeViewModel(get()) }
 
 }
