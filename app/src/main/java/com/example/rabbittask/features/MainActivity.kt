@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         if (savedInstanceState == null) {
             setupBottomNavigationBar()
         }
-
         bottom_navigation.itemIconTintList = null
 
         val icon = ImageView(this)
